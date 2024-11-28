@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Super Trivia Voice</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="https://img.logoipsum.com/225.svg" type="image/x-icon" />
+</head>
+
+<body>
+  <div id="game-container">
+    <!-- Pantalla de Inicio -->
+    <div id="start-screen" class="screen active">
+      <h1>Super Trivia Voice</h1>
+      <p>Integrantes:</p>
+      <p>WILLIAMS DAVID, LEON QUITO</p>
+      <p>JOSE ANTONIO, NEIRA HUAMAN</p>
+      <p>WILLIAM OMAR, ZUÑIGA LUJAN</p>
+      <button id="start-game">JUGAR</button>
+    </div>
+
+    <!-- Pantalla de Menú de Categorías -->
+    <div id="menu-screen" class="screen">
+      <h1>Super Trivia Voice</h1>
+      <div class="category-grid">
+        <div class="category-item" data-category="historia">Historia</div>
+        <div class="category-item" data-category="ciencia">Ciencia</div>
+        <div class="category-item" data-category="matematica">Matemática</div>
+        <div class="category-item" data-category="libros">Libros</div>
+        <div class="category-item" data-category="culturapopular">Cultura Popular</div>
+      </div>
+    </div>
+
+    <!-- Pantalla de Niveles -->
+    <div id="level-screen" class="screen">
+      <h2 id="selected-category-title">Selecciona Nivel de Dificultad</h2>
+      <div class="level-grid">
+        <div class="level-item" data-level="facil">Fácil</div>
+        <div class="level-item" data-level="medio">Medio</div>
+        <div class="level-item" data-level="dificil">Difícil</div>
+      </div>
+      <button id="back-to-categories">Volver a Categorías</button>
+    </div>
+
+    <!-- Pantalla de Juego -->
+    <div id="game-screen" class="screen">
+      <div id="score-board">
+        Puntuación: <span id="current-score">0</span> Mejor Puntuación: <span id="max-score">0</span>
+      </div>
+
+      <div id="timer">Tiempo: <span id="time-left">60</span></div>
+
+      <h2 id="category-title"></h2>
+      <img id="question-image" src="" alt="" style="max-width: 300px; max-height: 300px; display: none;">
+      <div id="question-container">
+        <p id="question">Presiona el botón de micrófono y responde la pregunta</p>
+      </div>
+
+      <button id="speak-btn">🎤 Hablar</button>
+      <button id="next-question">Siguiente Pregunta</button>
+
+      <div id="result"></div>
+
+      <button id="back-to-menu">Volver al Menú</button>
+
+      <div id="speech-console">
+        <strong>Lo que dijiste:</strong> <span id="speech-text"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reproductor de audio -->
+  <audio id="category-audio" controls style="display: none;">
+    <source id="audio-source" src="" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
